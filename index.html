@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4QQYVQHS7"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-Q4QQYVQHS7');
+	</script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Tu Fan Nahi… Toofan Hain!</title>
+	<link href="toofan.css" rel="stylesheet">
+	<script defer src="toofan.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <!-- add icon link for all standard browsers -->
+    <link rel = "icon" href = "https://sank0403.github.io/toofan/gameicon.jpg" 
+            type = "image/x-icon">  
+	<link rel="manifest" href="https://sank0403.github.io/toofan/toofan_manifest.json" />		<!--for shortcut icons and transitions-->	
+	<link href="https://sank0403.github.io/toofan/gameicon.jpg"  rel="icon shortcut" sizes="3232" /> <!--follow same as indle - usually a smaller version-->
+	<link href="https://sank0403.github.io/toofan/gameicon.jpg"  rel="apple-touch-icon" />	<!--This is the phone icon web title image-->		
+</head>
+<body>
+	<div id="title">Toofan!
+    <div id="stats"> 
+		<div id="stats-item"></div>	
+	</div>	
+	</div>
+	</div><br>
+	<div id="mycounter"></div>
+	<button data-modal-target="#modal">Game Rules</button> 
+    <!--&nbsp; &nbsp;  MODE :-     <input type="button" id="mode" value="EASY" onclick="toggle(this); "></center>-->
+	<!-- &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  -->
+    <!--<button onclick="onTimer()">Clickme</button>-->
+	<div class="modal" id="modal">
+		<div class="modal-header">
+			<div class="title">How To Play</div>	  
+				<button data-close-button class="close-button">&times;</button>
+		</div>
+		<div class ="modal-body">
+		  TOOFAN is a Test against time of your knowledge on the Indian Premiere League. The objective is to identify the mystery player, before the clock runs out.
+		  <br><br>
+		  You need to identify a player who has either been a Winning Captain, has won the Orange/Purple Cap, been the Man of the Match in the Finals, hit the Max no: of 6s, been the Player of the Series or been the Emerging Player of the series in a particular edition. 
+		  <br><br>
+		  You get a total of 60 seconds to identify the player. At set intervals, you get a clue about the mystery player. You lose if the clock winds down!
+		  <br><br>
+		  Use the on-screen keyboard to key in your answer. You can have multiple goes and Hit Enter to submit. The clock is stopped when you identify the player successfully.  	
+		  <br><br>
+		  Pay attention to the number of characters in the players first and last names. This is another clue, that could be of help. 
+		  <br><br>		  
+		  One of the below hints will be revealed at random after 5, 10, 20, 30, 40, and 50 seconds:-
+		  <br><br>
+			<ol>
+			  <li>Year indicates the edition of the World Cup in which the player won the accolade.</li>
+			  <li>Country indicates the nationality of the player.</li>
+			  <li>Team indicates the team of the player, of which he was part of in that edition.</li>
+			  <li>Category indicates the actual accolade that the player achieved in that particular edition.</li>
+			  <li>FN FL indicates the first letter of the players first name.</li>
+			  <li>LN FL indicates the first letter of the players last name (middle name if applicable).</li>
+			</ol>
+		  <h5><center>Legend : WC - Winning Captain | OC - Orange Cap | PC - Purple Cap | MF - MOM in the Finals | MVP - Player of the Series | FN FL - First Name First Letter | LN FL - Last Name First Letter | Max6s - Maximum 6s| EP - Emerging Player of the Series</h5></center>
+		  <h5><center><a href="mailto: geowordle@gmail.com">Contact</a></h5></center>
+		</div>		
+	</div>
+	<div id="overlay"></div>
+		<hr>
+    <div id="clue"> 
+		<div id="clue-ball">
+
+		</div>
+	</div>
+		<hr>
+        <br>
+    <div id="board"> 
+		<div id="boardfirst">
+
+		</div>
+		<div id ="boardlast"></div>
+	</div>
+        <br>
+		<hr>
+    <h1 id="answer"></h1>
+	   <br><br>
+    </body>
+</html>
+
+
