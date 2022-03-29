@@ -94,7 +94,7 @@ function GetElemid(){
 		}	 */
 
 // *****************************************************************************
-
+var enterHit = false;
 var gameOver = false;
 var arrayid = [0,1,2,3,4,5]
 var yearList = ["2008",
@@ -802,31 +802,57 @@ function processInput(e) {
 
     // alert(e.code);
     if ("KeyA" <= e.code && e.code <= "KeyZ") {
-        if (col < width) {
-            let currTile = document.getElementById(1 + '-' + col.toString());
-            if (currTile.innerText == "") {
-                currTile.innerText = e.code[3];
-                col += 1;
-            }
-        }
+		if (enterHit == true){
+			for (let c = col-1; c >= 0; c--) {
+				let currTile = document.getElementById(1 + '-' + c.toString());
+				currTile.innerText = "";
+				currTile.classList.remove("correct","present");
+				col -= 1;
+			}
+			let currTile = document.getElementById(1 + '-' + 0);
+			currTile.innerText = e.code[3];
+			col = 1;
+			enterHit = false;
+		}
+		else{		
+			if (col < width) {
+				let currTile = document.getElementById(1 + '-' + col.toString());
+				if (currTile.innerText == "") {
+					currTile.innerText = e.code[3];
+					col += 1;
+				}
+			}
+		}
 		document.getElementById("answer").innerText = "";
     }
     else if (e.code == "Backspace") {
-        if (0 < col && col <= width) {
-            col -=1;
-        }
-        let currTile = document.getElementById(1 + '-' + col.toString());
-        currTile.innerText = "";
-		currTile.classList.remove("correct","present");
+		if (enterHit == true){
+			for (let c = col-1; c >= 0; c--) {
+				let currTile = document.getElementById(1 + '-' + c.toString());
+				currTile.innerText = "";
+				currTile.classList.remove("correct","present");
+				col -= 1;
+			}
+			enterHit = false;
+		}
+		else{
+			if (0 < col && col <= width) {
+				col -=1;
+			}
+			let currTile = document.getElementById(1 + '-' + col.toString());
+			currTile.innerText = "";
+			currTile.classList.remove("correct","present");
+		}
 		document.getElementById("answer").innerText = "";
     }
     else if (e.code == "Clr") {
+		enterHit = false;
 		if (confirm('Are you sure you want to clear the entry?')) {
 		  // Clear it!
 			for (let c = col-1; c >= 0; c--) {
 				let currTile = document.getElementById(1 + '-' + c.toString());
 				currTile.innerText = "";
-				currTile.classList.remove("correct","present");
+				currTile.classList.remove("correct","present");				
 				col -= 1;
 			}
 		} else {
@@ -839,6 +865,7 @@ function processInput(e) {
 }
 
 function update() {
+	enterHit = true;	
     let guess = "";
     document.getElementById("answer").innerText = "";
 	
@@ -886,7 +913,7 @@ function update() {
 	}	
 	else{
 		document.getElementById("answer").style.color = "red";
-		document.getElementById("answer").innerText = "Incorrect Guess! \n Please try again.";
+		document.getElementById("answer").innerText = "Incorrect Guess! \n Hit any key to clear and then try again.";
 /* 		for (let c = col-1; c >= 0; c--) {
 			let currTile = document.getElementById(1 + '-' + c.toString());
 			currTile.innerText = "";
